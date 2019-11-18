@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h2 class="text-center mb-4">Flask Todo App</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          {% if all_tasks|length > 0 %}
+          <ul class="list-group">
+            {% for task in all_tasks %}
+            <li class="list-group-item">{{task}}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="text-center">You haven't added any task. Please add it to view all the tasks.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
